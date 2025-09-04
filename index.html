@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Luciano - Envio de Atividades</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5276; /* Azul escuro - cor principal */
+            --secondary-color: #2980b9; /* Azul claro - cor secundária */
+            --accent-color: #e74c3c; /* Vermelho - cor de destaque */
+            --light-color: #f8f9fa; /* Cor de fundo clara */
+            --dark-color: #343a40; /* Cor de texto escura */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            background-color: white;
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Navegação */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Conteúdo Principal */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(26, 82, 118, 0.8)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Conteúdo Principal - Flex para empurrar rodapé para baixo */
+        main {
+            flex: 1;
+        }
+
+        /* Seção de Drives */
+        .drives-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .instructions {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 5px;
+        }
+
+        .instructions h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .drives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .drive-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .drive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .drive-card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .drive-card-header h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .drive-card-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .drive-card-body {
+            padding: 25px;
+        }
+
+        .drive-card-body p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .drive-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .drive-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .important-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .important-note i {
+            color: #856404;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .important-note p {
+            color: #856404;
+            font-weight: 500;
+        }
+
+        /* Rodapé Simplificado */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .instructions {
+                padding: 15px;
+            }
+
+            .important-note {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .important-note i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">PL</div>
+                <h1>Professor Luciano</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#drives">Drives</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção Hero -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h2>Portal de Envio de Atividades</h2>
+                <p>Este é o espaço dedicado para você salvar todas as suas atividades do curso. Siga as instruções abaixo para enviar seus trabalhos.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Drives -->
+        <section class="drives-section" id="drives">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Como Enviar Suas Atividades</h2>
+                    <p>Para organizar melhor o acompanhamento das suas atividades, criamos pastas específicas para cada turma. Siga o passo a passo abaixo para enviar seus trabalhos corretamente.</p>
+                </div>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-clipboard-list"></i> Instruções para Envio</h3>
+                    <ol>
+                        <li><strong>Identifique sua turma:</strong> Verifique em qual turma você está matriculado (Sábado 8h, Sábado 10h ou Terça 19h).</li>
+                        <li><strong>Clique no botão "Acessar Drive":</strong> Será redirecionado para a pasta específica da sua turma.</li>
+                        <li><strong>Crie uma pasta com seu nome:</strong> Dentro da pasta da turma, crie uma nova pasta com seu nome completo.</li>
+                        <li><strong>Salve suas atividades:</strong> Dentro da sua pasta, salve todas as atividades e trabalhos solicitados durante o curso.</li>
+                        <li><strong>Nomeie seus arquivos corretamente:</strong> Use o formato "NomeDoArquivo_SeuNome" para facilitar a identificação.</li>
+                    </ol>
+                </div>
+
+                <div class="important-note">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Importante:</strong> Mantenha suas atividades sempre atualizadas na sua pasta. Isso facilitará o acompanhamento do seu progresso e a correção dos trabalhos.</p>
+                </div>
+
+                <div class="section-title">
+                    <h2>Selecione Sua Turma</h2>
+                    <p>Escolha abaixo o drive correspondente à sua turma para acessar a pasta onde você deverá salvar suas atividades.</p>
+                </div>
+
+                <div class="drives-grid">
+                    <!-- Card Sábado 8h -->
+                    <div class="drive-card">
+                        <div class="drive-card-header">
+                            <h3>Turma de Sábado</h3>
+                            <p>Horário: 8h</p>
+                        </div>
+                        <div class="drive-card-body">
+                            <p>Alunos da turma de sábado às 8h devem acessar este drive para salvar suas atividades do curso.</p>
+                            <a href="https://drive.google.com/drive/folders/1LmedLbYJCkBevBjgvL0RDgVX7KuzB5qX?usp=sharing" target="_blank" class="drive-btn">
+                                <i class="fab fa-google-drive"></i> Acessar Drive
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Sábado 10h -->
+                    <div class="drive-card">
+                        <div class="drive-card-header">
+                            <h3>Turma de Sábado</h3>
+                            <p>Horário: 10h</p>
+                        </div>
+                        <div class="drive-card-body">
+                            <p>Alunos da turma de sábado às 10h devem acessar este drive para salvar suas atividades do curso.</p>
+                            <a href="https://drive.google.com/drive/folders/1oknlNbqqMzNoXN3n0rb225Vosxd1yTDB?usp=sharing" target="_blank" class="drive-btn">
+                                <i class="fab fa-google-drive"></i> Acessar Drive
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Terça 19h -->
+                    <div class="drive-card">
+                        <div class="drive-card-header">
+                            <h3>Turma de Terça</h3>
+                            <p>Horário: 19h</p>
+                        </div>
+                        <div class="drive-card-body">
+                            <p>Alunos da turma de terça às 19h devem acessar este drive para salvar suas atividades do curso.</p>
+                            <a href="https://drive.google.com/drive/folders/1L3m-CBcQ8QiMonptry6JwN69UCgACX6P?usp=sharing" target="_blank" class="drive-btn">
+                                <i class="fab fa-google-drive"></i> Acessar Drive
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Simplificado -->
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2023 Professor Luciano. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Rolagem suave para links de âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Adicionar classe ativa ao menu quando rolar
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
