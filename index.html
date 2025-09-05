@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portal de envio de atividades do Professor Luciano. Acesse os drives das turmas e envie seus trabalhos.">
+    <meta name="keywords" content="Professor Luciano, envio de atividades, cursos online, Excel Avançado, Informática Básica">
+    <meta name="author" content="Professor Luciano">
     <title>Professor Luciano - Envio de Atividades</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
         :root {
-            /* Paleta vibrante baseada em cinza para adolescentes */
-            --primary-color: #374151; /* Cinza escuro moderno - cor principal (60%) */
-            --primary-dark: #1F2A44; /* Cinza mais escuro para hover */
-            --bg-color: #F3F4F6; /* Fundo cinza claro */
-            --secondary-color: #06B6D4; /* Ciano vibrante - fundo neutro (30%) */
-            --accent-color: #F87171; /* Coral - para elementos interativos (10%) */
-            --accent-hover: #EF4444; /* Coral mais escuro para hover */
-            --text-primary: #111827; /* Texto principal */
-            --text-secondary: #4B5563; /* Texto secundário */
-            --border-color: #D1D5DB; /* Cor das bordas */
-            --shadow-color: rgba(0, 0, 0, 0.15); /* Cor das sombras */
+            --primary-color: #374151;
+            --primary-dark: #1F2A44;
+            --bg-color: #F3F4F6;
+            --secondary-color: #06B6D4;
+            --accent-color: #F87171;
+            --accent-hover: #EF4444;
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --border-color: #D1D5DB;
+            --shadow-color: rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -45,7 +46,6 @@
             padding: 0 20px;
         }
 
-        /* Cabeçalho */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
@@ -65,7 +65,7 @@
         }
 
         .logo-icon {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            background: var(--accent-color);
             color: var(--primary-dark);
             width: 50px;
             height: 50px;
@@ -84,7 +84,6 @@
             font-weight: 700;
         }
 
-        /* Navegação */
         nav ul {
             display: flex;
             list-style: none;
@@ -111,9 +110,8 @@
             border-bottom: 3px solid var(--accent-color);
         }
 
-        /* Conteúdo Principal */
         .hero {
-            background: linear-gradient(rgba(55, 65, 81, 0.9), rgba(31, 42, 68, 0.8)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(55, 65, 81, 0.9), rgba(31, 42, 68, 0.8)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -132,12 +130,10 @@
             margin: 0 auto 30px;
         }
 
-        /* Conteúdo Principal - Flex para empurrar rodapé para baixo */
         main {
             flex: 1;
         }
 
-        /* Seção de Drives */
         .drives-section {
             padding: 60px 0;
         }
@@ -145,6 +141,10 @@
         .section-title {
             text-align: center;
             margin-bottom: 50px;
+        }
+
+        .drives-grid + .section-title {
+            margin-top: 30px;
         }
 
         .section-title h2 {
@@ -266,7 +266,7 @@
         }
 
         .important-note {
-            background-color: #FEE2E2; /* Coral claro para destaque */
+            background-color: var(--accent-color);
             border-left: 5px solid var(--primary-color);
             padding: 15px;
             margin: 30px auto;
@@ -284,11 +284,10 @@
         }
 
         .important-note p {
-            color: var(--text-primary); /* Texto principal */
-            font-weight: 600; /* Negrito para destaque */
+            color: var(--text-primary); /* Alterado para maior contraste */
+            font-weight: 600;
         }
 
-        /* Modal de Senha */
         .modal {
             display: none;
             position: fixed;
@@ -302,13 +301,8 @@
         }
 
         @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        @-webkit-keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-content {
@@ -324,13 +318,8 @@
         }
 
         @keyframes slideIn {
-            from {transform: translateY(-50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
-        }
-
-        @-webkit-keyframes slideIn {
-            from {transform: translateY(-50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .modal-header {
@@ -435,7 +424,6 @@
             display: none;
         }
 
-        /* Rodapé Simplificado */
         footer {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
@@ -448,7 +436,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -491,8 +478,17 @@
             }
 
             .modal-content {
-                margin: 20% auto;
-                padding: 20px;
+                margin: 10% auto;
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .modal-header h3 {
+                font-size: 20px;
+            }
+
+            .form-group input {
+                font-size: 14px;
             }
         }
 
@@ -504,7 +500,6 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <div class="container header-content">
             <div class="logo">
@@ -514,15 +509,13 @@
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#drives">Drives</a></li>
+                    <li><a href="#select-turma">Drives</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main>
-        <!-- Seção Hero -->
         <section class="hero" id="home">
             <div class="container">
                 <h2>Portal de Envio de Atividades</h2>
@@ -530,7 +523,6 @@
             </div>
         </section>
 
-        <!-- Seção de Drives -->
         <section class="drives-section" id="drives">
             <div class="container">
                 <div class="section-title">
@@ -555,14 +547,12 @@
                     <p><strong>Importante:</strong> Mantenha suas atividades sempre atualizadas na sua pasta. Isso facilitará o acompanhamento do seu progresso e a correção dos trabalhos.</p>
                 </div>
 
-                <!-- Seção de Cursos -->
                 <div class="section-title">
                     <h2>Selecione Seu Curso</h2>
                     <p>Escolha abaixo o drive correspondente ao seu curso para acessar a pasta onde você deverá salvar suas atividades.</p>
                 </div>
 
                 <div class="drives-grid">
-                    <!-- Card Excel Avançado -->
                     <div class="drive-card">
                         <div class="drive-card-header">
                             <h3>Curso de Excel Avançado</h3>
@@ -576,7 +566,6 @@
                         </div>
                     </div>
 
-                    <!-- Card Informática Básica -->
                     <div class="drive-card">
                         <div class="drive-card-header">
                             <h3>Curso de Informática Básica</h3>
@@ -591,14 +580,12 @@
                     </div>
                 </div>
 
-                <!-- Seção de Turmas -->
-                <div class="section-title">
+                <div class="section-title" id="select-turma">
                     <h2>Selecione Sua Turma</h2>
                     <p>Escolha abaixo o drive correspondente à sua turma para acessar a pasta onde você deverá salvar suas atividades.</p>
                 </div>
 
                 <div class="drives-grid">
-                    <!-- Card Sábado 8h -->
                     <div class="drive-card">
                         <div class="drive-card-header">
                             <h3>Turma de Sábado</h3>
@@ -612,7 +599,6 @@
                         </div>
                     </div>
 
-                    <!-- Card Sábado 10h -->
                     <div class="drive-card">
                         <div class="drive-card-header">
                             <h3>Turma de Sábado</h3>
@@ -626,7 +612,6 @@
                         </div>
                     </div>
 
-                    <!-- Card Terça 19h -->
                     <div class="drive-card">
                         <div class="drive-card-header">
                             <h3>Turma de Terça</h3>
@@ -644,12 +629,11 @@
         </section>
     </main>
 
-    <!-- Modal de Senha -->
     <div id="passwordModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Acesso Restrito</h3>
-                <span class="close" role="button" aria-label="Fechar modal">&times;</span>
+                <span class="close" role="button" aria-label="Fechar modal"><span aria-hidden="true">&times;</span></span>
             </div>
             <div class="modal-body">
                 <p>Por favor, digite a senha para acessar o drive do curso ou turma:</p>
@@ -666,7 +650,6 @@
         </div>
     </div>
 
-    <!-- Rodapé Simplificado -->
     <footer>
         <div class="container">
             <div class="copyright">
@@ -686,9 +669,9 @@
             });
         });
 
-        // Adicionar classe ativa ao menu quando rolar
+        // Adicionar classe ativa e aria-current ao menu quando rolar
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section, #select-turma');
             const navLinks = document.querySelectorAll('nav ul li a');
             
             let current = '';
@@ -703,8 +686,10 @@
             
             navLinks.forEach(link => {
                 link.classList.remove('active');
+                link.removeAttribute('aria-current');
                 if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
                 }
             });
         });
@@ -716,7 +701,7 @@
         const cancelBtn = document.getElementById('cancelBtn');
         const confirmBtn = document.getElementById('confirmBtn');
         const closeBtn = document.querySelector('.close');
-        
+        let lastFocusedElement;
         let currentLink = '';
         let currentPassword = '';
 
@@ -739,13 +724,24 @@
             });
         }
 
+        // Fechar modal com Esc
+        modal.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // Adicionar evento de clique a todos os botões de drive
         document.querySelectorAll('.drive-btn').forEach(button => {
             button.addEventListener('click', function() {
+                lastFocusedElement = document.activeElement;
                 currentLink = this.getAttribute('data-link');
                 currentPassword = this.getAttribute('data-password');
                 if (!currentLink || !currentPassword) {
-                    alert('Erro: Link ou senha não configurados para este drive.');
+                    errorMessage.textContent = 'Erro: Link ou senha não configurados para este drive.';
+                    errorMessage.style.display = 'block';
+                    modal.style.display = 'block';
+                    passwordInput.focus();
                     return;
                 }
                 passwordInput.value = '';
@@ -759,6 +755,9 @@
         // Fechar modal
         function closeModal() {
             modal.style.display = 'none';
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
         }
 
         closeBtn.addEventListener('click', closeModal);
