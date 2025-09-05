@@ -51,6 +51,10 @@
             color: white;
             padding: 20px 0;
             box-shadow: 0 4px 12px var(--shadow-color);
+            position: fixed; /* Fixar o header no topo */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Garantir que o header fique acima de outros elementos */
         }
 
         .header-content {
@@ -132,6 +136,7 @@
 
         main {
             flex: 1;
+            padding-top: 90px; /* Compensar a altura do header fixo */
         }
 
         .drives-section {
@@ -284,7 +289,7 @@
         }
 
         .important-note p {
-            color: var(--text-primary); /* Alterado para maior contraste */
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -490,6 +495,10 @@
             .form-group input {
                 font-size: 14px;
             }
+
+            main {
+                padding-top: 120px; /* Ajustar para layout em coluna em dispositivos móveis */
+            }
         }
 
         @media (max-width: 1024px) {
@@ -509,6 +518,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
+                    <li><a href="#select-curso">Cursos</a></li>
                     <li><a href="#select-turma">Drives</a></li>
                 </ul>
             </nav>
@@ -547,7 +557,7 @@
                     <p><strong>Importante:</strong> Mantenha suas atividades sempre atualizadas na sua pasta. Isso facilitará o acompanhamento do seu progresso e a correção dos trabalhos.</p>
                 </div>
 
-                <div class="section-title">
+                <div class="section-title" id="select-curso">
                     <h2>Selecione Seu Curso</h2>
                     <p>Escolha abaixo o drive correspondente ao seu curso para acessar a pasta onde você deverá salvar suas atividades.</p>
                 </div>
@@ -671,7 +681,7 @@
 
         // Adicionar classe ativa e aria-current ao menu quando rolar
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section, #select-turma');
+            const sections = document.querySelectorAll('section, #select-curso, #select-turma');
             const navLinks = document.querySelectorAll('nav ul li a');
             
             let current = '';
