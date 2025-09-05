@@ -284,7 +284,7 @@
         }
 
         .important-note p {
-            color: var(--text-primary); /* Revertido para texto principal */
+            color: var(--text-primary); /* Texto principal */
             font-weight: 600; /* Negrito para destaque */
         }
 
@@ -535,16 +535,16 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Como Enviar Suas Atividades</h2>
-                    <p>Para organizar melhor o acompanhamento das suas atividades, criamos pastas específicas para cada turma. Siga o passo a passo abaixo para enviar seus trabalhos corretamente.</p>
+                    <p>Para organizar melhor o acompanhamento das suas atividades, criamos pastas específicas para cada curso ou turma. Siga o passo a passo abaixo para enviar seus trabalhos corretamente.</p>
                 </div>
 
                 <div class="instructions">
                     <h3><i class="fas fa-clipboard-list"></i> Instruções para Envio</h3>
                     <ol>
-                        <li><strong>Identifique sua turma:</strong> Verifique em qual turma você está matriculado (Sábado 8h, Sábado 10h ou Terça 19h).</li>
-                        <li><strong>Clique no botão "Acessar Drive":</strong> Será solicitada uma senha para acessar a pasta específica da sua turma.</li>
-                        <li><strong>Digite a senha correta:</strong> Cada turma possui uma senha específica fornecida pelo professor.</li>
-                        <li><strong>Crie uma pasta com seu nome:</strong> Dentro da pasta da turma, crie uma nova pasta com seu nome completo.</li>
+                        <li><strong>Identifique seu curso ou turma:</strong> Verifique em qual curso (Excel Avançado ou Informática Básica) ou turma (Sábado 8h, Sábado 10h, Terça 19h) você está matriculado.</li>
+                        <li><strong>Clique no botão "Acessar Drive":</strong> Será solicitada uma senha para acessar a pasta específica do seu curso ou turma.</li>
+                        <li><strong>Digite a senha correta:</strong> Cada curso ou turma possui uma senha específica fornecida pelo professor.</li>
+                        <li><strong>Crie uma pasta com seu nome:</strong> Dentro da pasta do curso ou turma, crie uma nova pasta com seu nome completo.</li>
                         <li><strong>Salve suas atividades:</strong> Dentro da sua pasta, salve todas as atividades e trabalhos solicitados durante o curso.</li>
                         <li><strong>Nomeie seus arquivos corretamente:</strong> Use o formato "NomeDoArquivo_SeuNome" para facilitar a identificação.</li>
                     </ol>
@@ -555,6 +555,43 @@
                     <p><strong>Importante:</strong> Mantenha suas atividades sempre atualizadas na sua pasta. Isso facilitará o acompanhamento do seu progresso e a correção dos trabalhos.</p>
                 </div>
 
+                <!-- Seção de Cursos -->
+                <div class="section-title">
+                    <h2>Selecione Seu Curso</h2>
+                    <p>Escolha abaixo o drive correspondente ao seu curso para acessar a pasta onde você deverá salvar suas atividades.</p>
+                </div>
+
+                <div class="drives-grid">
+                    <!-- Card Excel Avançado -->
+                    <div class="drive-card">
+                        <div class="drive-card-header">
+                            <h3>Curso de Excel Avançado</h3>
+                            <p>Turma Online</p>
+                        </div>
+                        <div class="drive-card-body">
+                            <p>Alunos do curso de Excel Avançado devem acessar este drive para salvar suas atividades do curso.</p>
+                            <button type="button" class="drive-btn" data-link="https://drive.google.com/drive/folders/19r1uYw9ENTEFVRX7sd0PXZ3FjhrCGji2" data-password="excel">
+                                <i class="fab fa-google-drive"></i> Acessar Drive
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card Informática Básica -->
+                    <div class="drive-card">
+                        <div class="drive-card-header">
+                            <h3>Curso de Informática Básica</h3>
+                            <p>Turma Online</p>
+                        </div>
+                        <div class="drive-card-body">
+                            <p>Alunos do curso de Informática Básica devem acessar este drive para salvar suas atividades do curso.</p>
+                            <button type="button" class="drive-btn" data-link="https://drive.google.com/drive/folders/1E54RxNZE-CVIjbkF8tGX_DtXAyld-_Zl?usp=sharing" data-password="informática">
+                                <i class="fab fa-google-drive"></i> Acessar Drive
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de Turmas -->
                 <div class="section-title">
                     <h2>Selecione Sua Turma</h2>
                     <p>Escolha abaixo o drive correspondente à sua turma para acessar a pasta onde você deverá salvar suas atividades.</p>
@@ -615,7 +652,7 @@
                 <span class="close" role="button" aria-label="Fechar modal">&times;</span>
             </div>
             <div class="modal-body">
-                <p>Por favor, digite a senha para acessar o drive da turma:</p>
+                <p>Por favor, digite a senha para acessar o drive do curso ou turma:</p>
                 <div class="form-group">
                     <label for="passwordInput">Senha:</label>
                     <input type="password" id="passwordInput" placeholder="Digite a senha">
