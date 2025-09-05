@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #1a5276; /* Azul escuro - cor principal */
-            --secondary-color: #2980b9; /* Azul claro - cor secundária */
-            --accent-color: #e74c3c; /* Vermelho - cor de destaque */
-            --light-color: #f8f9fa; /* Cor de fundo clara */
-            --dark-color: #343a40; /* Cor de texto escura */
+            /* Paleta "Profissional e Moderna" */
+            --bg-color: #F1F3F5; /* Cinza-claro para fundo */
+            --card-bg: #FFFFFF; /* Branco para caixas de conteúdo */
+            --primary-color: #1A365D; /* Azul-marinho para navegação e botões */
+            --secondary-color: #2C5282; /* Tom complementar de azul */
+            --accent-color: #00ACC1; /* Turquesa para destaques */
+            --text-primary: #212529; /* Texto principal - quase preto */
+            --text-secondary: #495057; /* Texto secundário - cinza */
+            --border-color: #DEE2E6; /* Cor das bordas */
+            --shadow-color: rgba(0, 0, 0, 0.1); /* Cor das sombras */
         }
 
         * {
@@ -22,8 +27,8 @@
         }
 
         body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
@@ -42,7 +47,7 @@
             background-color: var(--primary-color);
             color: white;
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px var(--shadow-color);
         }
 
         .header-content {
@@ -98,7 +103,7 @@
 
         /* Conteúdo Principal */
         .hero {
-            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(26, 82, 118, 0.8)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -138,24 +143,32 @@
 
         .section-title p {
             font-size: 16px;
-            color: #666;
+            color: var(--text-secondary);
             max-width: 800px;
             margin: 0 auto;
         }
 
         .instructions {
-            background-color: #e8f4fc;
-            border-left: 4px solid var(--secondary-color);
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--primary-color);
             padding: 20px;
             margin: 30px auto;
             max-width: 800px;
             border-radius: 5px;
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
 
         .instructions h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .instructions h3 i {
+            color: var(--accent-color);
+            margin-right: 10px;
         }
 
         .instructions ol {
@@ -164,7 +177,7 @@
 
         .instructions li {
             margin-bottom: 10px;
-            color: #555;
+            color: var(--text-primary);
         }
 
         .drives-grid {
@@ -174,11 +187,12 @@
         }
 
         .drive-card {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--shadow-color);
             transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
         }
 
         .drive-card:hover {
@@ -187,7 +201,7 @@
         }
 
         .drive-card-header {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: white;
             padding: 20px;
             text-align: center;
@@ -209,51 +223,191 @@
 
         .drive-card-body p {
             margin-bottom: 20px;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .drive-btn {
             display: block;
             width: 100%;
             padding: 12px;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
             transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
         }
 
         .drive-btn:hover {
-            background-color: #c0392b;
+            background-color: var(--secondary-color);
+        }
+
+        .drive-btn i {
+            margin-right: 8px;
         }
 
         .important-note {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background-color: #E0F7FA;
+            border-left: 4px solid var(--accent-color);
             padding: 15px;
             margin: 30px auto;
             max-width: 800px;
             border-radius: 5px;
             display: flex;
             align-items: center;
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
 
         .important-note i {
-            color: #856404;
+            color: var(--accent-color);
             font-size: 24px;
             margin-right: 15px;
         }
 
         .important-note p {
-            color: #856404;
+            color: var(--text-primary);
             font-weight: 500;
+        }
+
+        /* Modal de Senha */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+
+        .close {
+            color: var(--text-secondary);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            margin-bottom: 25px;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cancel {
+            background-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-cancel:hover {
+            background-color: #CED4DA;
+        }
+
+        .btn-confirm {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-confirm:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
         }
 
         /* Rodapé Simplificado */
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--primary-color);
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -261,7 +415,7 @@
 
         .copyright {
             font-size: 14px;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Responsividade */
@@ -305,6 +459,11 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
+
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -320,7 +479,6 @@
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#drives">Drives</a></li>
-                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -349,7 +507,8 @@
                     <h3><i class="fas fa-clipboard-list"></i> Instruções para Envio</h3>
                     <ol>
                         <li><strong>Identifique sua turma:</strong> Verifique em qual turma você está matriculado (Sábado 8h, Sábado 10h ou Terça 19h).</li>
-                        <li><strong>Clique no botão "Acessar Drive":</strong> Será redirecionado para a pasta específica da sua turma.</li>
+                        <li><strong>Clique no botão "Acessar Drive":</strong> Será solicitada uma senha para acessar a pasta específica da sua turma.</li>
+                        <li><strong>Digite a senha correta:</strong> Cada turma possui uma senha específica fornecida pelo professor.</li>
                         <li><strong>Crie uma pasta com seu nome:</strong> Dentro da pasta da turma, crie uma nova pasta com seu nome completo.</li>
                         <li><strong>Salve suas atividades:</strong> Dentro da sua pasta, salve todas as atividades e trabalhos solicitados durante o curso.</li>
                         <li><strong>Nomeie seus arquivos corretamente:</strong> Use o formato "NomeDoArquivo_SeuNome" para facilitar a identificação.</li>
@@ -375,9 +534,9 @@
                         </div>
                         <div class="drive-card-body">
                             <p>Alunos da turma de sábado às 8h devem acessar este drive para salvar suas atividades do curso.</p>
-                            <a href="https://drive.google.com/drive/folders/1LmedLbYJCkBevBjgvL0RDgVX7KuzB5qX?usp=sharing" target="_blank" class="drive-btn">
+                            <button class="drive-btn" data-link="https://drive.google.com/drive/folders/1LmedLbYJCkBevBjgvL0RDgVX7KuzB5qX?usp=sharing" data-password="xt1020">
                                 <i class="fab fa-google-drive"></i> Acessar Drive
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -389,9 +548,9 @@
                         </div>
                         <div class="drive-card-body">
                             <p>Alunos da turma de sábado às 10h devem acessar este drive para salvar suas atividades do curso.</p>
-                            <a href="https://drive.google.com/drive/folders/1oknlNbqqMzNoXN3n0rb225Vosxd1yTDB?usp=sharing" target="_blank" class="drive-btn">
+                            <button class="drive-btn" data-link="https://drive.google.com/drive/folders/1oknlNbqqMzNoXN3n0rb225Vosxd1yTDB?usp=sharing" data-password="xt1040">
                                 <i class="fab fa-google-drive"></i> Acessar Drive
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -403,15 +562,37 @@
                         </div>
                         <div class="drive-card-body">
                             <p>Alunos da turma de terça às 19h devem acessar este drive para salvar suas atividades do curso.</p>
-                            <a href="https://drive.google.com/drive/folders/1L3m-CBcQ8QiMonptry6JwN69UCgACX6P?usp=sharing" target="_blank" class="drive-btn">
+                            <button class="drive-btn" data-link="https://drive.google.com/drive/folders/1L3m-CBcQ8QiMonptry6JwN69UCgACX6P?usp=sharing" data-password="xt1080">
                                 <i class="fab fa-google-drive"></i> Acessar Drive
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Modal de Senha -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Acesso Restrito</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Por favor, digite a senha para acessar o drive da turma:</p>
+                <div class="form-group">
+                    <label for="passwordInput">Senha:</label>
+                    <input type="password" id="passwordInput" placeholder="Digite a senha">
+                    <div id="errorMessage" class="error-message">Senha incorreta. Tente novamente.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn btn-cancel">Cancelar</button>
+                <button id="confirmBtn" class="btn btn-confirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Rodapé Simplificado -->
     <footer id="contact">
@@ -454,6 +635,65 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // Funcionalidade do modal de senha
+        const modal = document.getElementById('passwordModal');
+        const passwordInput = document.getElementById('passwordInput');
+        const errorMessage = document.getElementById('errorMessage');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const confirmBtn = document.getElementById('confirmBtn');
+        const closeBtn = document.querySelector('.close');
+        
+        let currentLink = '';
+        let currentPassword = '';
+
+        // Adicionar evento de clique a todos os botões de drive
+        document.querySelectorAll('.drive-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                currentLink = this.getAttribute('data-link');
+                currentPassword = this.getAttribute('data-password');
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+                modal.style.display = 'block';
+                passwordInput.focus();
+            });
+        });
+
+        // Fechar modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Fechar modal ao clicar fora dele
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Verificar senha e abrir link
+        confirmBtn.addEventListener('click', function() {
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === currentPassword) {
+                window.open(currentLink, '_blank');
+                closeModal();
+            } else {
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+
+        // Permitir enviar com Enter
+        passwordInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                confirmBtn.click();
+            }
         });
     </script>
 </body>
